@@ -1,6 +1,7 @@
 
-the Frontend api which is provide are
-API:-
+The Frontend API that I provide ,
+
+API's:-
 1. USER (Access without login):-
 
    1. homePage:-"http://localhost:5173/"
@@ -22,4 +23,18 @@ API:-
 3. ADMIN (after login only admin can access the)
 
    1. adminDashboard:-"http://localhost:5173/adminDashboard"
+
+
+The backend API that I provide,
+
+API's:-
+   1. Sign Up :- "/api/v1/user/register"
+   2. login :- "/api/v1/user/login"
+   3. logout:- "/api/v1/user/logout"
+   4. profile :- "/api/v1/user/profile"
+   5. resetPasswordToken :- "/api/v1/user/reset/:resetToke"
+   6. forgetPassword :- "/api/v1/user/forgetPassword"
+   7. UpdateProfile :- "/api/v1/user/updateProfile/:id"
+   8. deleteAccount :- "/api/v1/user/delete"
+   9. ChangePassword:- "/api/v1/user/changePassword"
 
