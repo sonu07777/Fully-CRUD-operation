@@ -1,5 +1,5 @@
 
-The Frontend API that I provide ,
+A. The Frontend API that I provide ,
 
 API's:-
 1. USER (Access without login):-
@@ -25,7 +25,7 @@ API's:-
    1. adminDashboard:-"http://localhost:5173/adminDashboard"
 
 
-The backend API that I provide,
+B. The backend API that I provide,
 
 API's:-
    1. Sign Up :- "http://localhost:5020/api/v1/user/register"
