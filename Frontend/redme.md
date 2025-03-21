@@ -2,7 +2,7 @@ The Frontend API that I provide ,
 
 API:-
 
-1. USER (Access without login):-
+1. Everyone (Access without login):-
 
    1. homePage:-"http://localhost:5173/"
    2. signup:-"http://localhost:5173/signup"
