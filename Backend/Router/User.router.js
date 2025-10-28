@@ -12,7 +12,7 @@ import {
   reset,
   changeProfile,
   deleteUser,
-  changePassword
+  changePassword,
 } from "../Controller/User.controller.js";
 
 authRouter.post("/register", uploads.single("avatar"), register);
@@ -25,9 +25,9 @@ authRouter.put(
   "/updateProfile/:id",
   isLogged_in,
   uploads.single("avatar"),
-  changeProfile
+  changeProfile,
 );
-authRouter.delete("/delete", isLogged_in, deleteUser)
+authRouter.delete("/delete", isLogged_in, deleteUser);
 authRouter.post("/changePassword", isLogged_in, changePassword);
 
 export default authRouter;
