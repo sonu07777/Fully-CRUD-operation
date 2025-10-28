@@ -1,4 +1,3 @@
-import { json } from "express";
 import User from "../Schema/User.schema.js";
 import AppError from "../Utils/All_error.js";
 import sendEmail from "../Utils/SendEmail.js";
@@ -29,7 +28,7 @@ const contactUs = async (req, res, next) => {
   });
 };
 
-const userStats = async (req, res, next) => {
+const userStats = async (req, res) => {
   try {
     const allUsersCount = await User.countDocuments();
 

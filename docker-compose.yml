@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./Backend
+    container_name: backend
+    restart: always
+    env_file:
+      - ./Backend/.env
+    ports:
+      - "8000:8000"
+
+
+  frontend:
+    build: ./Frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend

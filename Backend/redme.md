@@ -2,7 +2,6 @@ The Backend API that I provide ,
 
 API's:-
 
-
 1. Sign Up :- "http://localhost:5020/api/v1/user/register"
 2. login :- "http://localhost:5020/api/v1/user/login"
 3. logout:- "http://localhost:5020/api/v1/user/logout"

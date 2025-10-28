@@ -1,0 +1,45 @@
+name: build-and-lint
+
+# Trigger the workflow on pushes and pull requests to the main and temp branches
+on:
+  push:
+    branches: [main,temp]
+  pull_request:
+    branches: [main, temp]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+
+    - name: Install backend dependencies
+      working-directory: Backend
+      run: npm ci
+  
+    - name: Lint backend 
+      working-directory: Backend
+      run: npm run lint -- --max-warnings=0
+
+    - name: Install frontend dependencies
+      working-directory: Frontend
+      run: npm ci
+
+    - name: Lint frontend
+      working-directory: Frontend
+      run: npm run lint -- --max-warnings=0
+  
+    - name: Build backend
+      run: docker build -t backend ./Backend
+
+    - name: Build frontend
+      run: docker build -t frontend ./Frontend
+
+

@@ -7,7 +7,7 @@ import { createAccount } from "../Redux/Slice/AuthSlice";
 import { isEmail, isValidPassword } from "../AxiosInstance/regex";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const signupPage = () => {
+const SignupPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -228,4 +228,4 @@ const signupPage = () => {
   );
 };
 
-export default signupPage;
+export default SignupPage;

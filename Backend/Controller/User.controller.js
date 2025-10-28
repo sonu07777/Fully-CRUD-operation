@@ -1,4 +1,3 @@
-import { json } from "express";
 import AppError from "../Utils/All_error.js";
 import user from "../Schema/User.schema.js";
 import cloudinary from "cloudinary";
@@ -46,8 +45,8 @@ const register = async (req, res, next) => {
           crop: "fill",
         });
         if (result) {
-          (User.avatar.public_id = result.public_id),
-            (User.avatar.secure_url = result.secure_url);
+          ((User.avatar.public_id = result.public_id),
+            (User.avatar.secure_url = result.secure_url));
           fs.rm(`uploads/${req.file.filename}`);
         }
       } catch (error) {
@@ -83,8 +82,8 @@ const login = async (req, res, next) => {
       return next(
         new AppError(
           "Email or Password do not match or user does not exist",
-          401
-        )
+          401,
+        ),
       );
     }
     const token = await User.generateJWTToken();
@@ -112,7 +111,7 @@ const logout = (req, res, next) => {
       message: "User logged out successfully",
     });
   } catch (error) {
-    return next(new AppError("unsuccessfully logout", 400));
+    return next(new AppError(`unsuccessfully logout ${error}`, 400));
   }
 };
 
@@ -161,7 +160,7 @@ const forget_password = async (req, res, next) => {
     User.forgetPasswordExpiry = undefined;
     User.forgetPasswordToken = undefined;
     await User.save();
-    return next(new AppError("error.message", 500));
+    return next(new AppError(error.message, 500));
   }
 };
 
@@ -235,8 +234,8 @@ const changeProfile = async (req, res, next) => {
         crop: "fill",
       });
       if (result) {
-        (User.avatar.public_id = result.public_id),
-          (User.avatar.secure_url = result.secure_url);
+        ((User.avatar.public_id = result.public_id),
+          (User.avatar.secure_url = result.secure_url));
         fs.rm(`uploads/${req.file.filename}`);
       }
     } catch (error) {
@@ -293,5 +292,5 @@ export {
   reset,
   changeProfile,
   deleteUser,
-  changePassword
+  changePassword,
 };
