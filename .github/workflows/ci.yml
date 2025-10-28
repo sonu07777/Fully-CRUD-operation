@@ -21,11 +21,11 @@ jobs:
         node-version: '16'
 
     - name: Install backend dependencies
-      working-directory: backend
+      working-directory: Backend
       run: npm ci
   
     - name: Lint backend 
-      working-directory: backend
+      working-directory: Backend
       run: npm run lint -- --max-warnings=0
 
     - name: Install frontend dependencies
